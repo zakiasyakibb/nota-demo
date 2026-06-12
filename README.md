@@ -94,45 +94,45 @@
     <!-- Top Bar Navigation -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-30 no-print shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="bg-indigo-600 text-white p-2.5 rounded-xl shadow-md shadow-indigo-200">
-                    <i class="fa-solid fa-file-invoice text-lg"></i>
+            <div class="flex items-center space-x-2 sm:space-x-3 overflow-hidden">
+                <div class="bg-indigo-600 text-white p-2 rounded-xl shadow-md shadow-indigo-200 flex-shrink-0">
+                    <i class="fa-solid fa-file-invoice text-base sm:text-lg"></i>
                 </div>
-                <div>
-                    <span class="text-xl font-extrabold tracking-tight text-slate-900">Azky Studio <span class="text-indigo-600">(NOTA)</span></span>
-                    <span class="hidden sm:inline-block ml-2 px-2 py-0.5 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Demo Version 1.0</span>
+                <div class="truncate">
+                    <span class="text-base sm:text-xl font-extrabold tracking-tight text-slate-900 block sm:inline">Azky Studio <span class="text-indigo-600">(NOTA)</span></span>
+                    <span class="inline-block sm:ml-2 px-2 py-0.5 text-[10px] sm:text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Demo Version 1.0</span>
                 </div>
             </div>
-            <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
                 <div class="text-right hidden md:block">
                     <p class="text-xs text-slate-400">Total Transaksi Hari Ini</p>
                     <p class="text-sm font-bold text-slate-700" id="statTodayTotal">Rp 0</p>
                 </div>
                 <div class="h-8 w-px bg-slate-200 hidden md:block"></div>
                 <button onclick="resetAllData()" class="text-slate-500 hover:text-red-600 p-2 rounded-lg hover:bg-slate-100 transition duration-150" title="Reset Semua Data">
-                    <i class="fa-solid fa-arrow-rotate-left"></i>
+                    <i class="fa-solid fa-arrow-rotate-left text-sm sm:text-base"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 flex-grow w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
             
             <!-- LEFT PANEL: Inputs & Management (7 Columns) -->
-            <section class="lg:col-span-7 space-y-6 no-print">
+            <section class="lg:col-span-7 space-y-6 no-print w-full overflow-hidden">
                 
-                <!-- Quick Navigation Tabs for the Left Panel -->
-                <div class="bg-white p-1 rounded-xl border border-slate-200 flex space-x-1 shadow-sm">
-                    <button onclick="switchTab('tab-buat')" id="btn-tab-buat" class="tab-btn flex-1 py-2.5 px-3 rounded-lg text-sm font-medium flex items-center justify-center space-x-2 transition-all duration-150 bg-indigo-600 text-white">
+                <!-- Quick Navigation Tabs with responsive padding and text size -->
+                <div class="bg-white p-1 rounded-xl border border-slate-200 flex space-x-1 shadow-sm overflow-x-auto">
+                    <button onclick="switchTab('tab-buat')" id="btn-tab-buat" class="tab-btn flex-1 py-2.5 px-1.5 sm:px-3 rounded-lg text-xs sm:text-sm font-medium flex items-center justify-center space-x-1 sm:space-x-2 transition-all duration-150 bg-indigo-600 text-white whitespace-nowrap">
                         <i class="fa-solid fa-pen-to-square"></i>
                         <span>Buat Nota</span>
                     </button>
-                    <button onclick="switchTab('tab-katalog')" id="btn-tab-katalog" class="tab-btn flex-1 py-2.5 px-3 rounded-lg text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50 flex items-center justify-center space-x-2 transition-all duration-150">
+                    <button onclick="switchTab('tab-katalog')" id="btn-tab-katalog" class="tab-btn flex-1 py-2.5 px-1.5 sm:px-3 rounded-lg text-xs sm:text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50 flex items-center justify-center space-x-1 sm:space-x-2 transition-all duration-150 whitespace-nowrap">
                         <i class="fa-solid fa-boxes-stacked"></i>
                         <span>Katalog Barang</span>
                     </button>
-                    <button onclick="switchTab('tab-riwayat')" id="btn-tab-riwayat" class="tab-btn flex-1 py-2.5 px-3 rounded-lg text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50 flex items-center justify-center space-x-2 transition-all duration-150">
+                    <button onclick="switchTab('tab-riwayat')" id="btn-tab-riwayat" class="tab-btn flex-1 py-2.5 px-1.5 sm:px-3 rounded-lg text-xs sm:text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50 flex items-center justify-center space-x-1 sm:space-x-2 transition-all duration-150 whitespace-nowrap">
                         <i class="fa-solid fa-history"></i>
                         <span>Riwayat Nota</span>
                     </button>
@@ -141,11 +141,11 @@
                 <!-- SUB-TAB 1: BUAT NOTA -->
                 <div id="tab-buat" class="tab-content space-y-6">
                     <!-- Pengaturan Profil Toko (Collapsible Settings) -->
-                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                    <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
                         <button onclick="toggleStoreSettings()" class="w-full flex items-center justify-between text-left focus:outline-none">
                             <div class="flex items-center space-x-2">
                                 <i class="fa-solid fa-store text-indigo-500"></i>
-                                <h2 class="text-base font-semibold text-slate-900">Pengaturan Profil Toko</h2>
+                                <h2 class="text-sm sm:text-base font-semibold text-slate-900">Pengaturan Profil Toko</h2>
                             </div>
                             <i id="storeSettingsIcon" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-200"></i>
                         </button>
@@ -153,20 +153,20 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div class="sm:col-span-2">
                                     <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Logo Toko (Kustom)</label>
-                                    <div class="flex items-center space-x-3 bg-slate-50 border border-slate-200 rounded-xl p-3">
-                                        <div class="w-12 h-12 bg-white rounded-lg border border-slate-200 flex items-center justify-center overflow-hidden" id="logoPreviewContainer">
+                                    <div class="flex flex-col sm:flex-row items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl p-3">
+                                        <div class="w-12 h-12 bg-white rounded-lg border border-slate-200 flex items-center justify-center overflow-hidden flex-shrink-0" id="logoPreviewContainer">
                                             <i class="fa-solid fa-store text-slate-400 text-lg" id="logoPlaceholderIcon"></i>
                                             <img id="logoPreviewImg" class="w-full h-full object-contain hidden" alt="Logo Preview">
                                         </div>
-                                        <div class="flex-grow">
+                                        <div class="flex-grow text-center sm:text-left w-full sm:w-auto">
                                             <input type="file" id="storeLogoInput" accept="image/*" onchange="handleLogoUpload(this)" class="hidden">
-                                            <button onclick="document.getElementById('storeLogoInput').click()" class="bg-white hover:bg-slate-100 border border-slate-300 text-slate-700 text-xs font-semibold py-1.5 px-3 rounded-lg transition">
+                                            <button onclick="document.getElementById('storeLogoInput').click()" class="bg-white hover:bg-slate-100 border border-slate-300 text-slate-700 text-xs font-semibold py-1.5 px-3 rounded-lg transition inline-flex items-center justify-center">
                                                 <i class="fa-solid fa-upload mr-1"></i> Pilih Gambar
                                             </button>
-                                            <button onclick="removeStoreLogo()" id="btnRemoveLogo" class="hidden ml-2 text-rose-600 hover:text-rose-800 text-xs font-semibold py-1.5 px-2 transition">
+                                            <button onclick="removeStoreLogo()" id="btnRemoveLogo" class="hidden ml-2 text-rose-600 hover:text-rose-800 text-xs font-semibold py-1.5 px-2 transition inline-flex items-center justify-center">
                                                 <i class="fa-solid fa-trash-can mr-1"></i> Hapus
                                             </button>
-                                            <p class="text-[10px] text-slate-400 mt-1">Format rekomendasi: PNG/JPG persegi transparan (Maks. 500KB)</p>
+                                            <p class="text-[10px] text-slate-400 mt-1">Format: PNG/JPG persegi transparan (Maks. 500KB)</p>
                                         </div>
                                     </div>
                                 </div>
@@ -191,10 +191,10 @@
                     </div>
 
                     <!-- Informasi Nota & Pelanggan -->
-                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                    <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
                         <div class="flex items-center space-x-2 mb-4 border-b border-slate-100 pb-3">
                             <i class="fa-solid fa-user-tag text-indigo-500"></i>
-                            <h2 class="text-base font-semibold text-slate-900">1. Informasi Transaksi</h2>
+                            <h2 class="text-sm sm:text-base font-semibold text-slate-900">1. Informasi Transaksi</h2>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
@@ -209,7 +209,7 @@
                                 <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Nomor Nota / Invoice</label>
                                 <div class="relative">
                                     <input type="text" id="receiptNumber" oninput="updateReceipt()" class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-4 pr-10 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none transition" placeholder="INV-20260001">
-                                    <button onclick="generateRandomInvoiceNum()" class="absolute right-2 top-2 text-indigo-500 hover:text-indigo-700 p-1 rounded-md transition" title="Acak Nomor">
+                                    <button onclick="generateRandomInvoiceNum()" class="absolute right-2 top-2 text-indigo-500 hover:text-indigo-700 p-1.5 rounded-md transition animate-pulse" title="Acak Nomor">
                                         <i class="fa-solid fa-shuffle"></i>
                                     </button>
                                 </div>
@@ -218,7 +218,7 @@
                                 <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Tanggal Nota</label>
                                 <input type="date" id="receiptDate" oninput="updateReceipt()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none transition">
                             </div>
-                            <div>
+                            <div class="sm:col-span-2">
                                 <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Metode Pembayaran</label>
                                 <select id="paymentMethod" onchange="updateReceipt()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none transition">
                                     <option value="Tunai">Tunai / Cash</option>
@@ -231,17 +231,17 @@
                     </div>
 
                     <!-- Input Entry Barang -->
-                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-                        <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+                    <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 border-b border-slate-100 pb-3 gap-2">
                             <div class="flex items-center space-x-2">
                                 <i class="fa-solid fa-cart-flatbed text-indigo-500"></i>
-                                <h2 class="text-base font-semibold text-slate-900">2. Input Barang</h2>
+                                <h2 class="text-sm sm:text-base font-semibold text-slate-900">2. Input Barang</h2>
                             </div>
-                            <span class="text-xs text-indigo-600 font-medium bg-indigo-50 px-2 py-1 rounded-md">Pilih barang katalog atau buat kustom</span>
+                            <span class="text-[10px] sm:text-xs text-indigo-600 font-medium bg-indigo-50 px-2.5 py-1 rounded-md self-start sm:self-auto">Pilih katalog atau ketik kustom</span>
                         </div>
 
                         <!-- Baris Tambah Barang Cepat -->
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-3 mb-6">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-3 mb-4">
                             <!-- Dropdown Katalog Cepat / Manual -->
                             <div class="md:col-span-5">
                                 <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Cari / Pilih Dari Katalog</label>
@@ -262,21 +262,21 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 mb-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
                             <div>
                                 <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Jumlah (Kuantitas)</label>
                                 <div class="flex items-center">
-                                    <button type="button" onclick="adjustManualQty(-1)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-2.5 rounded-l-xl border border-r-0 border-slate-200 transition">
+                                    <button type="button" onclick="adjustManualQty(-1)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 px-4 py-2.5 rounded-l-xl border border-r-0 border-slate-200 transition touch-manipulation">
                                         <i class="fa-solid fa-minus"></i>
                                     </button>
                                     <input type="number" id="manualItemQty" class="w-full bg-slate-50 border-y border-slate-200 text-center py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none transition" value="1" min="1">
-                                    <button type="button" onclick="adjustManualQty(1)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-2.5 rounded-r-xl border border-l-0 border-slate-200 transition">
+                                    <button type="button" onclick="adjustManualQty(1)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 px-4 py-2.5 rounded-r-xl border border-l-0 border-slate-200 transition touch-manipulation">
                                         <i class="fa-solid fa-plus"></i>
                                     </button>
                                 </div>
                             </div>
                             <div class="flex items-end">
-                                <button onclick="addItemToInvoice()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-xl shadow-md shadow-indigo-100 transition duration-150 flex items-center justify-center space-x-2">
+                                <button onclick="addItemToInvoice()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-xl shadow-md shadow-indigo-100 transition duration-150 flex items-center justify-center space-x-2 touch-manipulation">
                                     <i class="fa-solid fa-circle-plus"></i>
                                     <span>Masukkan ke Nota</span>
                                 </button>
@@ -285,28 +285,28 @@
                     </div>
 
                     <!-- Daftar Barang yang Dimasukkan -->
-                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-                        <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+                    <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 border-b border-slate-100 pb-3 gap-2">
                             <div class="flex items-center space-x-2">
                                 <i class="fa-solid fa-list-check text-indigo-500"></i>
-                                <h2 class="text-base font-semibold text-slate-900">3. Rincian Barang di Nota</h2>
+                                <h2 class="text-sm sm:text-base font-semibold text-slate-900">3. Rincian Barang di Nota</h2>
                             </div>
-                            <button onclick="clearInvoiceItems()" class="text-xs text-red-600 hover:text-red-800 font-medium hover:underline flex items-center space-x-1">
+                            <button onclick="clearInvoiceItems()" class="text-xs text-red-600 hover:text-red-800 font-medium hover:underline flex items-center space-x-1 self-start sm:self-auto">
                                 <i class="fa-solid fa-trash-can"></i>
                                 <span>Kosongkan Nota</span>
                             </button>
                         </div>
 
-                        <!-- Table layout for items on desktop, list layout on mobile -->
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-left text-sm">
+                        <!-- Table layout for items with responsive scroll and touch handling -->
+                        <div class="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+                            <table class="w-full text-left text-sm min-w-[600px]">
                                 <thead>
                                     <tr class="text-slate-400 text-xs border-b border-slate-100 uppercase tracking-wider">
                                         <th class="py-3 px-1">Nama Barang</th>
                                         <th class="py-3 px-1 text-center" style="width: 100px;">Jumlah</th>
-                                        <th class="py-3 px-1 text-right" style="width: 120px;">Harga Satuan</th>
-                                        <th class="py-3 px-1 text-right" style="width: 120px;">Total</th>
-                                        <th class="py-3 px-1 text-center" style="width: 50px;">Aksi</th>
+                                        <th class="py-3 px-1 text-right" style="width: 130px;">Harga Satuan</th>
+                                        <th class="py-3 px-1 text-right" style="width: 130px;">Total</th>
+                                        <th class="py-3 px-1 text-center" style="width: 60px;">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody id="activeInvoiceItemsTable" class="divide-y divide-slate-100">
@@ -323,10 +323,10 @@
                     </div>
 
                     <!-- Diskon, Pajak & Pembayaran -->
-                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                    <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
                         <div class="flex items-center space-x-2 mb-4 border-b border-slate-100 pb-3">
                             <i class="fa-solid fa-tags text-indigo-500"></i>
-                            <h2 class="text-base font-semibold text-slate-900">4. Diskon, Pajak & Pembayaran</h2>
+                            <h2 class="text-sm sm:text-base font-semibold text-slate-900">4. Diskon, Pajak & Pembayaran</h2>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             <div>
@@ -338,7 +338,7 @@
                                 <input type="number" id="invoiceTax" oninput="updateReceipt()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none transition" value="0" min="0" max="100">
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Jumlah Dibayar (Uang Pas)</label>
+                                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Jumlah Dibayar</label>
                                 <div class="relative">
                                     <span class="absolute left-3 top-2.5 text-xs text-slate-400 font-medium">Rp</span>
                                     <input type="number" id="cashAmountPaid" oninput="updateReceipt()" class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-2 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none transition" value="0" min="0">
@@ -346,24 +346,24 @@
                             </div>
                         </div>
                         
-                        <!-- Quick cash helper buttons -->
-                        <div class="flex flex-wrap gap-2 mt-3">
+                        <!-- Quick cash helper buttons with responsive wrapping -->
+                        <div class="flex flex-wrap gap-2 mt-3 items-center">
                             <span class="text-xs text-slate-400 self-center">Uang Cepat:</span>
-                            <button onclick="applyQuickCash(10000)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs py-1 px-2.5 rounded-lg transition">Rp 10k</button>
-                            <button onclick="applyQuickCash(20000)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs py-1 px-2.5 rounded-lg transition">Rp 20k</button>
-                            <button onclick="applyQuickCash(50000)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs py-1 px-2.5 rounded-lg transition">Rp 50k</button>
-                            <button onclick="applyQuickCash(100000)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs py-1 px-2.5 rounded-lg transition">Rp 100k</button>
-                            <button onclick="applyQuickCash('pas')" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-600 text-xs py-1 px-2.5 rounded-lg font-medium transition">Uang Pas</button>
+                            <button onclick="applyQuickCash(10000)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs py-1.5 px-2.5 rounded-lg transition touch-manipulation">Rp 10k</button>
+                            <button onclick="applyQuickCash(20000)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs py-1.5 px-2.5 rounded-lg transition touch-manipulation">Rp 20k</button>
+                            <button onclick="applyQuickCash(50000)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs py-1.5 px-2.5 rounded-lg transition touch-manipulation">Rp 50k</button>
+                            <button onclick="applyQuickCash(100000)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs py-1.5 px-2.5 rounded-lg transition touch-manipulation">Rp 100k</button>
+                            <button onclick="applyQuickCash('pas')" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-600 text-xs py-1.5 px-2.5 rounded-lg font-medium transition touch-manipulation">Uang Pas</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- SUB-TAB 2: ATUR KATALOG BARANG -->
                 <div id="tab-katalog" class="tab-content hidden space-y-6">
-                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                    <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
                         <div class="flex items-center space-x-2 mb-4 border-b border-slate-100 pb-3">
                             <i class="fa-solid fa-box text-indigo-500"></i>
-                            <h2 class="text-base font-semibold text-slate-900">Tambah Barang ke Katalog</h2>
+                            <h2 class="text-sm sm:text-base font-semibold text-slate-900">Tambah Barang ke Katalog</h2>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
@@ -378,7 +378,7 @@
                                 </div>
                             </div>
                             <div class="sm:col-span-2">
-                                <button onclick="addNewCatalogItem()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-xl shadow-md transition duration-150 flex items-center justify-center space-x-2">
+                                <button onclick="addNewCatalogItem()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-xl shadow-md transition duration-150 flex items-center justify-center space-x-2 touch-manipulation">
                                     <i class="fa-solid fa-plus"></i>
                                     <span>Simpan ke Katalog</span>
                                 </button>
@@ -387,13 +387,13 @@
                     </div>
 
                     <!-- List Katalog -->
-                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-                        <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
-                            <h2 class="text-base font-semibold text-slate-900">Daftar Katalog Saat Ini</h2>
-                            <span id="catalogCount" class="text-xs text-indigo-600 font-bold bg-indigo-50 px-2 py-1 rounded-full">0 Barang</span>
+                    <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 border-b border-slate-100 pb-3 gap-2">
+                            <h2 class="text-sm sm:text-base font-semibold text-slate-900">Daftar Katalog Saat Ini</h2>
+                            <span id="catalogCount" class="text-xs text-indigo-600 font-bold bg-indigo-50 px-2 py-1 rounded-full self-start sm:self-auto">0 Barang</span>
                         </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-left text-sm">
+                        <div class="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+                            <table class="w-full text-left text-sm min-w-[500px]">
                                 <thead>
                                     <tr class="text-slate-400 text-xs border-b border-slate-100 uppercase tracking-wider">
                                         <th class="py-3 px-2">Nama Barang</th>
@@ -411,19 +411,19 @@
 
                 <!-- SUB-TAB 3: RIWAYAT NOTA TERKOMPILASI -->
                 <div id="tab-riwayat" class="tab-content hidden space-y-6">
-                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-                        <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+                    <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 border-b border-slate-100 pb-3 gap-2">
                             <div class="flex items-center space-x-2">
                                 <i class="fa-solid fa-history text-indigo-500"></i>
-                                <h2 class="text-base font-semibold text-slate-900">Riwayat Transaksi</h2>
+                                <h2 class="text-sm sm:text-base font-semibold text-slate-900">Riwayat Transaksi</h2>
                             </div>
-                            <button onclick="clearAllHistory()" class="text-xs text-red-600 hover:text-red-800 font-semibold hover:underline flex items-center space-x-1">
+                            <button onclick="clearAllHistory()" class="text-xs text-red-600 hover:text-red-800 font-semibold hover:underline flex items-center space-x-1 self-start sm:self-auto">
                                 <i class="fa-solid fa-eraser"></i>
                                 <span>Hapus Semua Riwayat</span>
                             </button>
                         </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-left text-sm">
+                        <div class="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+                            <table class="w-full text-left text-sm min-w-[600px]">
                                 <thead>
                                     <tr class="text-slate-400 text-xs border-b border-slate-100 uppercase tracking-wider">
                                         <th class="py-3 px-2">Tanggal</th>
@@ -448,64 +448,64 @@
             </section>
 
             <!-- RIGHT PANEL: Live Invoice Preview (5 Columns) -->
-            <section class="lg:col-span-5 space-y-4">
+            <section class="lg:col-span-5 space-y-4 w-full">
                 
-                <div class="flex items-center justify-between no-print px-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between no-print px-1 gap-3">
                     <span class="text-sm font-semibold text-slate-500 flex items-center space-x-1">
                         <i class="fa-solid fa-eye text-emerald-500 animate-pulse"></i>
                         <span>Preview Nota Kertas</span>
                     </span>
-                    <div class="flex space-x-2">
-                        <button onclick="saveInvoiceToHistory()" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold py-1.5 px-3 rounded-lg shadow-sm transition duration-150 flex items-center space-x-1">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="saveInvoiceToHistory()" class="flex-1 sm:flex-none bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold py-2 px-3 rounded-lg shadow-sm transition duration-150 flex items-center justify-center space-x-1 touch-manipulation">
                             <i class="fa-solid fa-cloud-arrow-up"></i>
-                            <span>Simpan Transaksi</span>
+                            <span>Simpan</span>
                         </button>
-                        <button onclick="window.print()" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold py-1.5 px-3 rounded-lg shadow-sm transition duration-150 flex items-center space-x-1">
+                        <button onclick="window.print()" class="flex-1 sm:flex-none bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold py-2 px-3 rounded-lg shadow-sm transition duration-150 flex items-center justify-center space-x-1 touch-manipulation">
                             <i class="fa-solid fa-print"></i>
-                            <span>Cetak Nota</span>
+                            <span>Cetak</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Paper Invoice Container -->
-                <div id="printArea" class="bg-white rounded-xl shadow-xl border border-slate-200 p-8 text-slate-800 relative mx-auto max-w-md md:max-w-none transition-all duration-300">
+                <!-- Paper Invoice Container (With optimized responsive paddings to fit mobile) -->
+                <div id="printArea" class="bg-white rounded-xl shadow-xl border border-slate-200 p-4 sm:p-8 text-slate-800 relative mx-auto w-full max-w-full md:max-w-none transition-all duration-300">
                     
                     <!-- Store Brand Header -->
                     <div class="text-center border-b-2 border-dashed border-slate-200 pb-5">
                         <div class="flex justify-center mb-3">
-                            <div id="receiptLogoWrapper" class="w-14 h-14 flex items-center justify-center overflow-hidden">
-                                <i class="fa-solid fa-store text-indigo-600 text-3xl" id="recDefaultLogo"></i>
+                            <div id="receiptLogoWrapper" class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center overflow-hidden">
+                                <i class="fa-solid fa-store text-indigo-600 text-2xl sm:text-3xl" id="recDefaultLogo"></i>
                                 <img id="recCustomLogo" class="max-w-full max-h-full object-contain hidden" alt="Logo Toko">
                             </div>
                         </div>
-                        <h1 id="recStoreName" class="text-xl font-extrabold text-slate-900 tracking-tight">AZKY STUDIO</h1>
-                        <p id="recStoreAddress" class="text-xs text-slate-500 mt-1">Jl. Pembangunan Ekonomi No. 45, Jakarta Selatan</p>
-                        <p id="recStoreContact" class="text-xs text-slate-400">Telp: 0812-3456-7890 | Email: halo@notakita.com</p>
+                        <h1 id="recStoreName" class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">AZKY STUDIO</h1>
+                        <p id="recStoreAddress" class="text-[10px] sm:text-xs text-slate-500 mt-1 leading-relaxed">Jl. Pembangunan Ekonomi No. 45, Jakarta Selatan</p>
+                        <p id="recStoreContact" class="text-[10px] sm:text-xs text-slate-400 mt-0.5">Telp: 0812-3456-7890 | Email: halo@notakita.com</p>
                     </div>
 
                     <!-- Invoice Metadata info -->
-                    <div class="grid grid-cols-2 gap-2 text-xs py-5 border-b border-slate-100">
-                        <div>
+                    <div class="grid grid-cols-2 gap-2 text-[10px] sm:text-xs py-5 border-b border-slate-100">
+                        <div class="overflow-hidden">
                             <span class="text-slate-400 block uppercase font-medium tracking-wider">INFORMASI PELANGGANG</span>
-                            <span id="recClientName" class="font-bold text-slate-700 block mt-0.5">NAMA</span>
-                            <span id="recClientPhone" class="text-slate-500 block text-[11px] mt-0.5">NOMOR</span>
+                            <span id="recClientName" class="font-bold text-slate-700 block mt-0.5 truncate">NAMA</span>
+                            <span id="recClientPhone" class="text-slate-500 block text-[9px] sm:text-[11px] mt-0.5 truncate">NOMOR</span>
                         </div>
-                        <div class="text-right">
-                            <span id="recInvoiceNum" class="font-bold text-indigo-600 block mb-0.5">INV-20260001</span>
+                        <div class="text-right overflow-hidden">
+                            <span id="recInvoiceNum" class="font-bold text-indigo-600 block mb-0.5 truncate">INV-20260001</span>
                             <span id="recDate" class="text-slate-500 block">06/06/2026</span>
-                            <span id="recPaymentMethod" class="inline-block mt-1 px-1.5 py-0.5 bg-slate-100 rounded text-[10px] text-slate-600 font-bold uppercase tracking-wider">TUNAI</span>
+                            <span id="recPaymentMethod" class="inline-block mt-1 px-1.5 py-0.5 bg-slate-100 rounded text-[9px] sm:text-[10px] text-slate-600 font-bold uppercase tracking-wider">TUNAI</span>
                         </div>
                     </div>
 
                     <!-- Invoice Items Table Inside Paper -->
-                    <div class="py-5">
-                        <table class="w-full text-xs">
+                    <div class="py-5 overflow-hidden">
+                        <table class="w-full text-[11px] sm:text-xs">
                             <thead>
-                                <tr class="text-slate-400 border-b border-slate-200 font-semibold uppercase tracking-wider text-[10px]">
+                                <tr class="text-slate-400 border-b border-slate-200 font-semibold uppercase tracking-wider text-[9px] sm:text-[10px]">
                                     <th class="text-left pb-2">Deskripsi Barang</th>
-                                    <th class="text-center pb-2" style="width: 50px;">Qty</th>
-                                    <th class="text-right pb-2" style="width: 100px;">Harga</th>
-                                    <th class="text-right pb-2" style="width: 100px;">Total</th>
+                                    <th class="text-center pb-2" style="width: 40px;">Qty</th>
+                                    <th class="text-right pb-2" style="width: 80px;">Harga</th>
+                                    <th class="text-right pb-2" style="width: 90px;">Total</th>
                                 </tr>
                             </thead>
                             <tbody id="recItemsBody" class="divide-y divide-slate-100">
@@ -515,7 +515,7 @@
                     </div>
 
                     <!-- Calculation Totals Section -->
-                    <div class="border-t border-slate-200 pt-4 space-y-1.5 text-xs">
+                    <div class="border-t border-slate-200 pt-4 space-y-1.5 text-[11px] sm:text-xs">
                         <div class="flex justify-between text-slate-500">
                             <span>Subtotal</span>
                             <span id="recSubtotal">Rp 0</span>
@@ -528,7 +528,7 @@
                             <span>PPN (<span id="recTaxPct">0</span>%)</span>
                             <span id="recTaxAmt">+Rp 0</span>
                         </div>
-                        <div class="flex justify-between text-base font-extrabold text-slate-950 border-t border-dashed border-slate-200 pt-3">
+                        <div class="flex justify-between text-sm sm:text-base font-extrabold text-slate-950 border-t border-dashed border-slate-200 pt-3">
                             <span>Grand Total</span>
                             <span id="recGrandTotal" class="text-indigo-600">Rp 0</span>
                         </div>
@@ -544,12 +544,12 @@
 
                     <!-- Footer Note inside Receipt -->
                     <div class="text-center border-t-2 border-dashed border-slate-200 mt-6 pt-5">
-                        <p class="text-[11px] font-semibold text-slate-700">Terima Kasih Atas Kunjungan Anda!</p>
-                        <p class="text-[10px] text-slate-400 mt-1">Barang yang sudah dibeli tidak dapat ditukar kembali.</p>
-                        <p class="text-[9px] text-slate-300 mt-3 font-mono">Powered by Azky Studio</p>
+                        <p class="text-[10px] sm:text-[11px] font-semibold text-slate-700">Terima Kasih Atas Kunjungan Anda!</p>
+                        <p class="text-[9px] sm:text-[10px] text-slate-400 mt-1">Barang yang sudah dibeli tidak dapat ditukar kembali.</p>
+                        <p class="text-[8px] sm:text-[9px] text-slate-300 mt-3 font-mono">Powered by Azky Studio</p>
                     </div>
 
-                    <!-- Ornamental Cut Marks (Paper Mockup Visual Only) -->
+                    <!-- Ornamental Cut Marks (Paper Mockup Visual Only) - Scaled or hidden elegantly on small mobile -->
                     <div class="absolute -bottom-2 left-0 right-0 h-4 bg-slate-50 flex items-center justify-around overflow-hidden no-print">
                         <div class="w-3 h-3 bg-white border-t border-r border-slate-200 rotate-45 transform translate-y-2"></div>
                         <div class="w-3 h-3 bg-white border-t border-r border-slate-200 rotate-45 transform translate-y-2"></div>
@@ -565,7 +565,7 @@
 
                 <!-- Print Note/Tips -->
                 <div class="bg-indigo-50 rounded-xl p-4 text-xs text-indigo-700 border border-indigo-100 no-print flex items-start space-x-2">
-                    <i class="fa-solid fa-circle-info mt-0.5"></i>
+                    <i class="fa-solid fa-circle-info mt-0.5 flex-shrink-0"></i>
                     <div>
                         <p class="font-bold mb-1">Tips Mencetak:</p>
                         <p class="text-indigo-600 leading-relaxed">Saat jendela print browser muncul, aktifkan opsi <strong>"Sembunyikan Header/Footer"</strong> dan nyalakan <strong>"Grafis Latar Belakang (Background Graphics)"</strong> agar hasil cetak kertas nota Anda sempurna.</p>
@@ -783,6 +783,7 @@
             }, 3000);
         }
 
+        // --- STREAMING_CHUNK: Menyusun navigasi tab dinamis yang responsif... -->
         // --- NAVIGATION TABS LOGIC ---
         function switchTab(tabId) {
             // Hide all tabs
@@ -791,15 +792,15 @@
             // Show target tab
             document.getElementById(tabId).classList.remove('hidden');
 
-            // Reset tab button states
+            // Reset tab button states to responsive base
             document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.className = "tab-btn flex-1 py-2.5 px-3 rounded-lg text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50 flex items-center justify-center space-x-2 transition-all duration-150";
+                btn.className = "tab-btn flex-1 py-2.5 px-1.5 sm:px-3 rounded-lg text-xs sm:text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50 flex items-center justify-center space-x-1 sm:space-x-2 transition-all duration-150 whitespace-nowrap";
             });
 
-            // Highlight active button
+            // Highlight active button with responsive class persistence
             const activeBtn = document.getElementById(`btn-${tabId}`);
             if (activeBtn) {
-                activeBtn.className = "tab-btn flex-1 py-2.5 px-3 rounded-lg text-sm font-medium flex items-center justify-center space-x-2 transition-all duration-150 bg-indigo-600 text-white shadow-md shadow-indigo-100";
+                activeBtn.className = "tab-btn flex-1 py-2.5 px-1.5 sm:px-3 rounded-lg text-xs sm:text-sm font-medium flex items-center justify-center space-x-1 sm:space-x-2 transition-all duration-150 bg-indigo-600 text-white shadow-md shadow-indigo-100 whitespace-nowrap";
             }
         }
 
@@ -812,7 +813,6 @@
             updateReceipt();
         }
 
-        // --- STREAMING_CHUNK: Managing catalog interaction and selections ---
         // --- MANAGE KATALOG BARANG FUNCTIONS ---
         function renderCatalogDropdown() {
             const dropdown = document.getElementById('catalogSelect');
@@ -1036,21 +1036,21 @@
                 tr.className = "hover:bg-slate-50 transition-colors duration-150";
                 tr.innerHTML = `
                     <td class="py-3 px-1">
-                        <div class="font-semibold text-slate-800">${item.name}</div>
+                        <div class="font-semibold text-slate-800 break-words max-w-[150px] sm:max-w-[200px]">${item.name}</div>
                     </td>
                     <td class="py-3 px-1 text-center">
-                        <input type="number" value="${item.qty}" min="1" onchange="adjustInvoiceItemQty('${item.id}', this.value)" class="w-14 text-center border border-slate-200 rounded px-1 py-1 text-xs focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 outline-none">
+                        <input type="number" value="${item.qty}" min="1" onchange="adjustInvoiceItemQty('${item.id}', this.value)" class="w-12 sm:w-14 text-center border border-slate-200 rounded px-1 py-1 text-xs focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 outline-none">
                     </td>
                     <td class="py-3 px-1 text-right">
-                        <div class="relative inline-block w-28">
-                            <span class="absolute left-1 top-1.5 text-[10px] text-slate-400">Rp</span>
+                        <div class="relative inline-block w-24 sm:w-28">
+                            <span class="absolute left-1.5 top-1.5 text-[10px] text-slate-400">Rp</span>
                             <input type="number" value="${item.price}" min="0" onchange="adjustInvoiceItemPrice('${item.id}', this.value)" class="w-full text-right border border-slate-200 rounded pl-5 pr-1 py-1 text-xs font-mono focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 outline-none">
                         </div>
                     </td>
                     <td class="py-3 px-1 text-right font-mono font-bold text-slate-700">${formatRupiah(item.total)}</td>
                     <td class="py-3 px-1 text-center">
-                        <button onclick="removeInvoiceItem('${item.id}')" class="text-slate-400 hover:text-red-500 p-1.5 rounded transition" title="Hapus">
-                            <i class="fa-solid fa-square-minus"></i>
+                        <button onclick="removeInvoiceItem('${item.id}')" class="text-slate-400 hover:text-red-500 p-1.5 rounded transition touch-manipulation" title="Hapus">
+                            <i class="fa-solid fa-square-minus text-lg"></i>
                         </button>
                     </td>
                 `;
@@ -1058,6 +1058,7 @@
             });
         }
 
+        // --- STREAMING_CHUNK: Menghitung pembagian matematika kasir real-time... -->
         // --- LIVE PREVIEW RECEIPT RENDERING & CALCULATIONS ---
         function updateReceipt() {
             // Read inputs
@@ -1124,7 +1125,7 @@
                     tr.className = "border-b border-slate-50";
                     tr.innerHTML = `
                         <td class="py-2.5 pr-1 font-medium text-slate-800">
-                            <div>${item.name}</div>
+                            <div class="break-words max-w-[120px] sm:max-w-none">${item.name}</div>
                         </td>
                         <td class="py-2.5 text-center text-slate-500 font-mono">${item.qty}</td>
                         <td class="py-2.5 text-right text-slate-500 font-mono">${formatRupiah(item.price)}</td>
@@ -1242,13 +1243,13 @@
                 tr.innerHTML = `
                     <td class="py-3 px-2 text-slate-600 text-xs">${record.date}</td>
                     <td class="py-3 px-2 font-bold text-indigo-600">${record.invoiceNum}</td>
-                    <td class="py-3 px-2 text-slate-800 font-medium">${record.clientName}</td>
+                    <td class="py-3 px-2 text-slate-800 font-medium truncate max-w-[100px] sm:max-w-none">${record.clientName}</td>
                     <td class="py-3 px-2 text-right font-bold text-slate-900 font-mono">${formatRupiah(record.grandTotal)}</td>
                     <td class="py-3 px-2 text-center flex items-center justify-center space-x-1.5">
-                        <button onclick="loadHistoryToWorkspace('${record.id}')" class="text-indigo-500 hover:text-indigo-700 p-1.5 rounded bg-indigo-50 hover:bg-indigo-100 transition" title="Buka & Edit">
+                        <button onclick="loadHistoryToWorkspace('${record.id}')" class="text-indigo-500 hover:text-indigo-700 p-1.5 rounded bg-indigo-50 hover:bg-indigo-100 transition touch-manipulation" title="Buka & Edit">
                             <i class="fa-solid fa-folder-open"></i>
                         </button>
-                        <button onclick="deleteHistoryItem('${record.id}')" class="text-rose-500 hover:text-rose-700 p-1.5 rounded bg-rose-50 hover:bg-rose-100 transition" title="Hapus Riwayat">
+                        <button onclick="deleteHistoryItem('${record.id}')" class="text-rose-500 hover:text-rose-700 p-1.5 rounded bg-rose-50 hover:bg-rose-100 transition touch-manipulation" title="Hapus Riwayat">
                             <i class="fa-solid fa-trash"></i>
                         </button>
                     </td>
